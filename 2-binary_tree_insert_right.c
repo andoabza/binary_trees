@@ -1,4 +1,5 @@
 #include "binary_trees.h"
+
 /**
  * binary_tree_insert_right - a binary tree that insert to the right.
  *
@@ -7,6 +8,7 @@
  *
  * RETURN - the new node.
  */
+
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
 	binary_tree_t *new;
