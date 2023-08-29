@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-#include <stdlib.h>
 /**
  * binary_tree_insert_right - a binary tree that insert to the right.
  * @parent: the root value.
