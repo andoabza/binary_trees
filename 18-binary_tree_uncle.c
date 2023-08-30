@@ -8,17 +8,19 @@
 binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 {
         binary_tree_t *parent;
-        if (node == NULL || node->parent->parent == NULL)
+	binary_tree_t *granpa;
+        if (node == NULL || node->parent == NULL || node->parent->parent == NULL)
                 return (NULL);
 
         parent = node->parent;
+	granpa = parent->parent;
 
         if (parent->left || parent->right)
         {
-                if (parent->left == node)
-                        return (parent->parent->left);
+                if (granpa->left == parent)
+                        return (granpa->right);
                 else
-                        return (parent->parent->right);
+                        return (granpa->left);
         }
 
         return (NULL);
