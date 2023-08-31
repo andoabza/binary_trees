@@ -17,13 +17,13 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		if(tree->left->left && tree->left->right && tree->right->left && tree->right->right)
 		{
 			if (tree->left->left != NULL && tree->left->right != NULL && tree->right->left != NULL && tree->right->right != NULL)
-				return (1);
-		}
-			if(tree->left->left->right && tree->left->right->left && tree->right->left->right && tree->right->right->left)
-			{			
-				if (tree->left->left->right != NULL && tree->left->right->left != NULL && tree->right->left->right != NULL && tree->right->right->left != NULL)
+			{	
+				if(tree->left->left->right || tree->left->right->left || tree->right->left->right || tree->right->right->left)
 					return (0);
+				return (1);
+		
 			}
+		}	
 		return (0);
 	}    
 	return 0;
