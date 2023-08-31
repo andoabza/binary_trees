@@ -19,7 +19,7 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 			if (tree->left->left != NULL && tree->left->right != NULL && tree->right->left != NULL && tree->right->right != NULL)
 			{	
 				if(tree->left->left->right || tree->left->right->left || tree->right->left->right || tree->right->right->left)
-					return (0);
+					return (1);
 				return (1);
 		
 			}
