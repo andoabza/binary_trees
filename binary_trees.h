@@ -25,6 +25,30 @@ typedef struct binary_tree_s bst_t;
 typedef struct binary_tree_s avl_t;
 typedef struct binary_tree_s heap_t;
 
+/* for the queue_t */
+/**
+ * queue_node - a linked list  for the queue.
+ * @data: data to be stored.
+ * @link: the address of the pinter.
+ */
+typedef struct queue_node
+{
+        void *data;
+        struct queue_node *link;
+} queue_node_t;
+
+/**
+ * queue_node_t - point to front and back.
+ * @start - pointer to the start.
+ * @end - pointer to end.
+ */
+
+typedef struct
+{
+        queue_node_t *start;
+        queue_node_t *end;
+} queue_t;
+
 void binary_tree_print(const binary_tree_t *);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
@@ -47,5 +71,6 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+
 
 #endif
